@@ -3,14 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Download</title>
+    <title>Download File</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .file-info {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>File yang Tersedia</h2>
-    <ul>
-        <li><a href="download.php?file=example.txt">Download File 1</a></li>
-        <li><a href="download.php?file=example.zip">Download File 2</a></li>
-        <!-- Tambahkan lebih banyak file sesuai kebutuhan -->
-    </ul>
+
+    <h1>File Download Page</h1>
+
+    <div class="file-info">
+        <p>Nama File: <span id="fileName">example.txt</span></p>
+        <p>Ekstensi: <span id="fileExtension">.txt</span></p>
+        <p>Ukuran: <span id="fileSize">10 MB</span></p>
+        <p>Jumlah Download: <span id="downloadCount">100</span></p>
+        <p>Deskripsi: <span id="fileDescription">Ini adalah contoh file.</span></p>
+    </div>
+
+    <button onclick="downloadFile()">Download File</button>
+
+    <script>
+        function downloadFile() {
+            // Implement download logic here
+            // For demonstration purposes, let's simulate an increase in download count
+            let downloadCountElement = document.getElementById('downloadCount');
+            let currentDownloadCount = parseInt(downloadCountElement.innerText);
+            downloadCountElement.innerText = currentDownloadCount + 1;
+        }
+    </script>
+
 </body>
 </html>
